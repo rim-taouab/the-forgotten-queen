@@ -53,12 +53,12 @@ const QUEEN = {
   forest: {
     intro: "The old trees lean close. They have been holding these words for you.",
     whispers: [
-      "You make rooms warmer simply by entering them.",
-      "Your kindness is not softness — it is strength that chose gentleness.",
-      "You listen in a way that makes people feel finally heard.",
-      "There is a light in you that even you forget to notice.",
-      "You carry other people's storms so patiently, and still you bloom.",
-      "The way you love is quiet, steady, and completely unforgettable.",
+      "Your kindness is the quiet kind — it notices, it remembers, and it shows up without ever being asked.",
+      "You are gentle with the whole world, and gentler still with the people lucky enough to be near you.",
+      "There is a whimsy in you that turns ordinary days into small adventures. You make life more magical simply by being playful in it.",
+      "You are beautiful — but it is the way you light up when you're happy that no one ever quite forgets.",
+      "You are clever in a way that catches people off guard — quick, bright, and quietly wise.",
+      "And beneath all of it, you are the kind of friend the whole world hopes to find, and only the lucky few get to keep.",
     ],
   },
 
@@ -119,11 +119,11 @@ const QUEEN = {
   grove: {
     intro: "The spirits gather. Each one is a thing you carry so naturally you have forgotten it is rare.",
     virtues: [
-      { name: "Tenderness", word: "You treat fragile things — people, moments, yourself — as though they matter. Because they do." },
-      { name: "Courage",    word: "You are gentle, and you are brave. You have kept going through things you never speak of." },
-      { name: "Wonder",     word: "You still stop for small beauties. A sky, a song, a stranger's kindness. You never grew that out." },
-      { name: "Devotion",   word: "When you love, you love wholly. The people lucky enough to be yours are never in doubt of it." },
-      { name: "Grace",      word: "You forgive quickly and hold grudges poorly. The world is lighter for how easily you let it be." },
+      { name: "Kindness",   word: "You treat people with a care that costs you nothing and means everything. The world is softer wherever you pass." },
+      { name: "Gentleness", word: "You hold hearts — others' and your own — as though they are worth protecting. Because they are." },
+      { name: "Whimsy",     word: "You never let the world make you dull. A little spark of play refuses to grow up in you, and thank goodness for it." },
+      { name: "Radiance",   word: "There is a light to you, inside and out. People remember how you made them feel as much as how you looked doing it." },
+      { name: "Brilliance", word: "Your mind is quick and bright. You understand things — and people — far faster than you ever let on." },
     ],
   },
 
@@ -152,15 +152,15 @@ const QUEEN = {
       "A crown of light — because the truest royalty was never taken.",
       "It was earned, quietly, through kindness.",
     ],
-    coronation: "Welcome home, Queen.",
+    coronation: "Welcome home, Queen {name}.",
   },
 
   // ---- The closing message (used if no finaleVideo is set) ----------------
   closing: [
     "Happy Birthday, my Fairy Queen.",
-    "The realm will keep its light on now.",
-    "It knows you will come back.",
-    "It always knew.",
+    "The realm will keep its light on now. It knows you will come back.",
+    "And whatever the years bring, remember this —",
+    "I love you, bestie fairy. 💛",
   ],
 };
 
