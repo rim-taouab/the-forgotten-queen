@@ -69,7 +69,7 @@ const QUEEN = {
     memories: [
       {
         title: "Your Twenty-Second Spring",
-        tale: "On the day you turned twenty-two, the whole realm brightened just for you — and the one who holds you dearest still counts it among the finest days their own life has known.",
+        tale: "On the day you turned twenty-two, your whole kingdom brightened just for you — and the one who holds you dearest still counts it among the finest days their own life has known.",
       },
       {
         title: "The Little Table Where Hearts Opened",
@@ -81,7 +81,7 @@ const QUEEN = {
       },
       {
         title: "The Simplest Magic",
-        tale: "And the truest of all: to the friend who walks beside you, simply having you in their life makes every ordinary day warmer, lighter, and better. That, the realm knows, is the deepest magic there is.",
+        tale: "And the truest of all: to the friend who walks beside you, simply having you in their life makes every ordinary day warmer, lighter, and better. That, your kingdom knows, is the deepest magic there is.",
       },
     ],
   },
@@ -104,7 +104,7 @@ const QUEEN = {
       },
       {
         cover: "The One True Thing",
-        text: "The world is more beautiful because you are in it. That is not a birthday nicety. It is the plainest fact this whole realm was built to tell you.",
+        text: "The world is more beautiful because you are in it. That is not a birthday nicety. It is the plainest fact your whole kingdom was built to tell you.",
       },
     ],
   },
@@ -132,7 +132,7 @@ const QUEEN = {
     intro: "The oldest living thing in the realm has been waiting to tell you one thing.",
     wisdom: [
       "You have spent so long making yourself small enough to fit into other people's comfort.",
-      "But this realm did not wake for someone small.",
+      "But your kingdom did not wake for someone small.",
       "It woke for a queen.",
       "Not the kind who rules — the kind who tends. Who mends. Who makes the world gentler by being in it.",
       "That crown was always yours. You simply set it down somewhere and forgot.",
@@ -141,7 +141,7 @@ const QUEEN = {
 
   // ---- 7. The Crystal Palace — the finale ---------------------------------
   palace: {
-    intro: "Everything the realm remembers about you is gathering now.",
+    intro: "Everything your kingdom remembers about you is gathering now.",
     crownLines: [
       "Every whisper from the forest —",
       "every memory in the river —",
