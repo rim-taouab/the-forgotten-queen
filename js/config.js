@@ -67,20 +67,20 @@ const QUEEN = {
     intro: "The river remembers everything. Trail your hand in it, and it will retell your days as the stories they truly were.",
     memories: [
       {
-        title: "Her Twenty-Second Spring",
-        tale: "On the day she turned twenty-two, the whole realm brightened just for her — and the friend at her side still holds it, quietly, as one of the best days of their life.",
+        title: "Your Twenty-Second Spring",
+        tale: "On the day you turned twenty-two, the whole realm brightened just for you — and the one who holds you dearest still counts it among the finest days their own life has known.",
       },
       {
         title: "The Little Table Where Hearts Opened",
-        tale: "One evening the two friends slipped into a small, warm diner, and somewhere between the words they opened up completely. They walked out closer than they had ever been — bonded by everything finally said aloud.",
+        tale: "One evening you and your dearest friend slipped into a small, warm diner, and somewhere between the words, your hearts opened all the way. You left closer than ever — bound by everything finally said aloud.",
       },
       {
         title: "Every Road Leads to Meadows",
-        tale: "Whenever these two wander together, the path keeps a gentle secret: wherever it begins, it always seems to end in meadows of happiness.",
+        tale: "Whenever you and your friend walk side by side, the road keeps a gentle habit: wherever it begins, it always seems to end in meadows of happiness.",
       },
       {
         title: "The Simplest Magic",
-        tale: "There is no grand enchantment to this one. Simply having her as a friend makes all of life warmer, lighter, and better — and that, the realm knows, is the truest magic of all.",
+        tale: "And the truest of all: to the friend who walks beside you, simply having you in their life makes every ordinary day warmer, lighter, and better. That, the realm knows, is the deepest magic there is.",
       },
     ],
   },
