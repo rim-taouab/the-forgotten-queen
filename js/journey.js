@@ -180,8 +180,8 @@ const Journey = (() => {
         card.querySelector("h3").style.display = item.title ? "block" : "none";
         card.querySelector("p").textContent = T(item.text || item.body || "");
         card.classList.add("show");
-        clearTimeout(card.__timer);
-        card.__timer = setTimeout(() => card.classList.remove("show"), 6500);
+        // The card stays open so she can read at her own pace; it's replaced
+        // when she visits another fairy, and fades away when the scene ends.
       }
       function updateCounter() {
         counter.textContent =
@@ -270,18 +270,19 @@ const Journey = (() => {
     await narrate(s, [QUEEN.meadow.intro], { gap: 2800 });
 
     const field = el("div", "field");
-    field.style.height = "min(50vh, 460px)";
-    field.style.width = "min(1000px, 92vw)";
+    field.style.height = "min(58vh, 520px)";
+    field.style.width = "min(1100px, 94vw)";
     s.appendChild(field);
 
     const flowers = [];
     const kinds = ["blossom", "tulip", "daisy", "rose", "lotus"];
-    const total = 26;
+    const petalColors = ["#ffc7e6", "#fff0a8", "#ffd6ea", "#f2b8d4", "#e6d0ff"];
+    const total = 40; // a fuller meadow
     for (let i = 0; i < total; i++) {
       const f = el("div", "flower", Icons.get(kinds[i % kinds.length]));
-      f.style.left = (5 + Math.random() * 90) + "%";
-      f.style.top = (10 + Math.random() * 80) + "%";
-      const sz = 30 + Math.random() * 30;
+      f.style.left = (4 + Math.random() * 92) + "%";
+      f.style.top = (8 + Math.random() * 84) + "%";
+      const sz = 28 + Math.random() * 34;
       f.style.width = sz + "px";
       f.style.height = sz + "px";
       field.appendChild(f);
@@ -290,17 +291,24 @@ const Journey = (() => {
 
     let bloomed = 0;
     const onMove = (e) => {
-      flowers.forEach((f) => {
+      flowers.forEach((f, i) => {
         if (f.classList.contains("bloom")) return;
         const r = f.getBoundingClientRect();
-        const dx = e.clientX - (r.left + r.width / 2);
-        const dy = e.clientY - (r.top + r.height / 2);
-        if (dx * dx + dy * dy < 12000) {
+        const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        const dx = e.clientX - cx, dy = e.clientY - cy;
+        if (dx * dx + dy * dy < 15000) {
           f.classList.add("bloom");
           bloomed++;
-          Sound.chime();
-          Atmosphere.burst(r.left + r.width / 2, r.top + r.height / 2, "#ffc7e6", 8);
-          if (bloomed === Math.floor(total * 0.6)) {
+          Sound.chime(i);
+          // a burst of petals + a ring of light where it opens
+          const col = petalColors[i % petalColors.length];
+          Atmosphere.burst(cx, cy, col, 14);
+          const ring = el("div", "bloom-ring");
+          ring.style.left = cx + "px";
+          ring.style.top = cy + "px";
+          document.body.appendChild(ring);
+          setTimeout(() => ring.remove(), 1400);
+          if (bloomed === Math.floor(total * 0.55)) {
             narrate(s, [QUEEN.meadow.line], { gap: 2000 });
           }
         }
@@ -415,19 +423,39 @@ const Journey = (() => {
       const wrap = document.getElementById("closing");
       wrap.classList.add("show");
       flash.classList.remove("on");
-      for (const line of QUEEN.closing) {
-        const p = el("p", "reveal", T(line));
+
+      // a crown of light rests above the final words
+      const crown = el("div", "closing-crown");
+      crown.innerHTML = window.Icons ? Icons.get("crown") : "";
+      wrap.appendChild(crown);
+      requestAnimationFrame(() => crown.classList.add("in"));
+      Sound.swell(5);
+      // a soft shower of light gathering around her
+      const burst1 = setInterval(() => {
+        Atmosphere.burst(window.innerWidth / 2 + (Math.random() - 0.5) * 260, window.innerHeight * 0.3, "#fff6c9", 4);
+      }, 200);
+      setTimeout(() => clearInterval(burst1), 2600);
+      await wait(1600);
+
+      // reveal each closing line, unhurried
+      for (let i = 0; i < QUEEN.closing.length; i++) {
+        const p = el("p", "reveal" + (i === 0 ? " closing-hail" : ""), T(QUEEN.closing[i]));
         wrap.appendChild(p);
         requestAnimationFrame(() => p.classList.add("in"));
         Sound.chime();
-        await wait(3000);
+        await wait(i === 0 ? 3800 : 3200);
       }
-      // soft endless firefly rain
+
+      await wait(1400);
+      // an invitation to linger / return
+      const again = el("div", "closing-again", "✦ walk the realm again ✦");
+      wrap.appendChild(again);
+      requestAnimationFrame(() => again.classList.add("in"));
+      again.addEventListener("click", () => location.reload());
+
+      // soft endless firefly rain — the realm keeps its light on
       setInterval(() => {
-        Atmosphere.burst(
-          Math.random() * window.innerWidth,
-          -10, "#fff6c9", 3
-        );
+        Atmosphere.burst(Math.random() * window.innerWidth, -10, "#fff6c9", 3);
       }, 900);
     }
   }
