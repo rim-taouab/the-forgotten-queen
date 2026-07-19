@@ -67,20 +67,20 @@ const QUEEN = {
     intro: "The river remembers everything. Trail your hand in it, and it will retell your days as the stories they truly were.",
     memories: [
       {
-        title: "The Day the Lanterns Met",
-        tale: "Once, two small lights drifted through the same crowded dark and, against every chance, found each other. Neither has drifted alone since.",
+        title: "Her Twenty-Second Spring",
+        tale: "On the day she turned twenty-two, the whole realm brightened just for her — and the friend at her side still holds it, quietly, as one of the best days of their life.",
       },
       {
-        title: "The Winter We Kept Warm",
-        tale: "There was a cold season the world turned grey — and still, in one small room, there was laughter enough to keep two hearts in summer.",
+        title: "The Little Table Where Hearts Opened",
+        tale: "One evening the two friends slipped into a small, warm diner, and somewhere between the words they opened up completely. They walked out closer than they had ever been — bonded by everything finally said aloud.",
       },
       {
-        title: "The Long Road Home",
-        tale: "They walked further than they meant to, got lost more than once, and would tell you now that every wrong turn was worth the company.",
+        title: "Every Road Leads to Meadows",
+        tale: "Whenever these two wander together, the path keeps a gentle secret: wherever it begins, it always seems to end in meadows of happiness.",
       },
       {
-        title: "The Ordinary Tuesday",
-        tale: "Nothing was supposed to happen that day. And yet she smiled at something small, and the whole world quietly rearranged itself to be better.",
+        title: "The Simplest Magic",
+        tale: "There is no grand enchantment to this one. Simply having her as a friend makes all of life warmer, lighter, and better — and that, the realm knows, is the truest magic of all.",
       },
     ],
   },
