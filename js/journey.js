@@ -372,13 +372,21 @@ const Journey = (() => {
     await narrate(s, [QUEEN.palace.intro], { gap: 2600 });
     await wait(500);
     await narrate(s, QUEEN.palace.crownLines, { gap: 2600, chime: true });
-    await wait(1000);
+    await wait(1600);
+
+    // let the words dissolve so the crown & coronation stand alone (no overflow)
+    s.querySelectorAll("h2, .narration").forEach((n) => {
+      n.style.transition = "opacity 2s ease";
+      n.style.opacity = "0";
+    });
+    await wait(2000);
+    s.querySelectorAll("h2, .narration").forEach((n) => n.remove());
 
     // gather all light into a crown — the cinematic climax
     document.getElementById("letterbox").classList.add("on");
     Sound.swell(6);
     const cx = window.innerWidth / 2;
-    const cy = window.innerHeight * 0.34;
+    const cy = window.innerHeight * 0.4;
     await new Promise((resolve) => {
       Atmosphere.weaveCrown(cx, cy, Math.min(150, window.innerWidth * 0.13), resolve);
       // keep motes gathering while it weaves
@@ -392,9 +400,8 @@ const Journey = (() => {
       setTimeout(() => clearInterval(gatherer), 6000);
     });
 
-    // coronation word
+    // coronation word — alone and centred in the now-empty scene
     const cor = el("div", "coronation-text reveal", T(QUEEN.palace.coronation));
-    cor.style.marginTop = "18vh";
     s.appendChild(cor);
     requestAnimationFrame(() => cor.classList.add("in"));
     Sound.swell(5);
